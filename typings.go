@@ -26,4 +26,12 @@ func main() {
 	fmt.Println(x, y)
 	fmt.Println(add(x, y))
 
+	// pointers
+	num := 888
+	pointer := &num
+
+	fmt.Println(pointer, *pointer, *pointer**pointer)
+
+
+
 }
