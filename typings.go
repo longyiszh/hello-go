@@ -10,7 +10,7 @@ func add(x,y float64) float64 {
 	return x + y
 }
 
-func main2() {
+func main3() {
 	var str1 = "Hello"
 
 	str2 := "  " + "go go"
