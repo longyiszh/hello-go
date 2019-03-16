@@ -22,7 +22,7 @@ func (c *cellphone) changeName(newName string) {
 	c.name = newName
 }
 
-func main() {
+func main4() {
 	iphone := cellphone{
 		name:      "iphone",
 		price:     6867.88,
