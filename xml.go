@@ -420,20 +420,47 @@ type Unit struct {
 	Tactics    string `xml:"Tactics"`
 }
 
+// UnitAction {<ProtoAction>...</ProtoAction><ProtoAction>...</ProtoAction><ProtoAction>...</ProtoAction>}
+// xml nested-tag location navigation
+type UnitAction struct {
+	Actions []Action `xml:"Unit>ProtoAction"`
+}
+
+// Action {<ProtoAction>...</ProtoAction>}
+type Action struct {
+	Name       string  `xml:"Name"`
+	Damage     float32 `xml:"Damage"`
+	DamageType string  `xml:"DamageType"`
+}
+
 // func (u Unit) String() string {
 // 	return fmt.Sprintf(u.Tactics)
 // }
 
-func decode() Protos {
+func decodeProtos() Protos {
 	var pr Protos
 	xml.Unmarshal(protos, &pr)
 
 	return pr
 }
 
-func main() {
-	fmt.Println("xml")
-	fmt.Println(decode().Units)
+func decodeAction() UnitAction {
+	var act UnitAction
+	xml.Unmarshal(protos, &act)
+
+	return act
+}
+
+func mainXML() {
+	// fmt.Println("xml")
+	fmt.Println(decodeAction())
+	// units := decodeProtos().Units
+
+	// for index, unit := range units {
+	// 	fmt.Printf("\n\n%d-%+v", index, unit)
+	// 	fmt.Printf("\n%d-%s", index, unit.Tactics)
+	// }
+
 }
 
 // note:
