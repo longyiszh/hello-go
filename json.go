@@ -125,6 +125,6 @@ func unMarshalToStruct() InvItemSlice {
 	return invItemslice
 }
 
-func main() {
+func mainjson() {
 	fmt.Println(unMarshalToStruct())
 }
