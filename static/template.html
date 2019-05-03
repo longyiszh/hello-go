@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>{{ .Camp.Title }}</title>
+</head>
+<body>
+  <section class="pageFrame">
+    <h1>Welcome to {{ .Camp.Title }}</h1>
+    <h2>{{ .Camp.Meme }}</h2>
+
+    <section class="petECenter">
+      <h2>Pet Exprerience Center</h2>
+      <section class="sel">
+        <section class="pet">
+          <h2> I would like to play with </h2>
+          <div class="dropdown">
+            <button class="dropdown">
+              Choose a Pet
+            </button>
+            <div class="dContent">
+              <a href="##">Cat</a>
+              <a href="##">Dog</a>
+              <a href="##">Monkey</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="qclass">
+          <h2> with Service Quality of</h2>
+          <div class="dropdown">
+            <button class="dropdown">
+              Choose a class
+            </button>
+            <div class="dContent">
+              <a href="##">Ultimate</a>
+              <a href="##">Extreme</a>
+              <a href="##">Just-look</a>
+            </div>
+          </div>
+        </section>
+
+
+      </section>
+
+      <hr>
+      <h1>(Still WIP)</h1>
+      <section class="order">
+        
+        <article>
+          <picture class="avatar">
+            <span>Cat</span>
+          </picture>
+
+          <h2>BGM</h2>
+          <h3>Type: Cat</h3>
+          <h3>Spontaneity: 1.5</h3>
+        </article>
+
+        <article>
+          <picture class="avatar">
+            <span>Extreme</span>
+          </picture>
+
+          <h2>Extreme Tier</h2>
+          <h3>Class Level: 10</h3>
+          <h3>Base Price: $100</h3>
+        </article>
+
+        <article>
+          <picture class="avatar">
+            <span>Order Preview</span>
+          </picture>
+
+          <h2>Order Preview</h2>
+          <h3>Total Price: $150</h3>
+          <div>Pay!</div>
+        </article>
+
+      </section>
+
+    </section>
+  </section>
+
+  <section class="hidden">
+    <h1>This section is meant to be hidden</h1>
+    <table class="pets">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Type</td>
+          <td>Spontaneity</td>
+        </tr>
+      </thead>
+      <tbody>
+
+        {{ range $key, $value := .Pets }}
+
+        <tr>
+          <td>{{ $value.Name }} </td>
+          <td>{{ $value.Type }}</td>
+          <td> {{ $value.Spontaneity }} </td>
+        </tr>
+
+        {{ end }}
+
+      </tbody>
+    </table>
+
+    <table class="ticket">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Class</td>
+          <td>Price</td>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        {{ range $key, $value := .Tickets }}
+
+        <tr>
+          <td>{{ $value.Name }} </td>
+          <td>{{ $value.Class }}</td>
+          <td> {{ $value.Price }} </td>
+        </tr>
+
+        {{ end }}
+
+
+
+      </tbody>
+    </table>
+
+
+  </section>
+
+  
+
+  <script src="./script.js"> </script>
+</body>
+</html>

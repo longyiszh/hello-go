@@ -1,0 +1,94 @@
+picture {
+    display: block;
+}
+
+section.pageFrame {
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.petECenter {
+    border: 2px solid palevioletred;
+}
+
+.petECenter .sel {
+    display: flex;
+}
+
+button.dropdown {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+section.sel > section {
+    margin: 0px auto;
+}
+
+section.sel div.dropdown {
+    display: flex;
+    position: relative;
+}
+
+section.sel button.dropdown {
+    margin: 0px auto;
+}
+
+section.sel div.dContent {
+    display: none;
+    position: absolute;
+    top: 2em;
+    left: 6em;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+section.sel div.dContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+section.sel div.dContent a:hover {
+    background-color: #ddd;
+}
+
+section.sel div.dropdown:hover div.dContent {
+    display: block;
+}
+
+section.order {
+    display: flex;
+}
+
+section.order h2 {
+    text-align: center;
+}
+
+section.order article {
+    margin: 0px auto;
+}
+
+section.order picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    width: 128px;
+    height: 128px;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    border: 1px solid #eeeeee;
+}
