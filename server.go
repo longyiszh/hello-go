@@ -107,7 +107,7 @@ func campHand(w http.ResponseWriter, r *http.Request) {
 	temp.Execute(w, thepage)
 }
 
-func main() {
+func mainsv() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
 
