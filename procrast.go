@@ -23,6 +23,37 @@ func procrastD(str string) {
 	// Defer behaves like a stack. Statements in multiple "defer"s follow LIFO order of exec
 }
 
+func procrastN(str string) {
+
+	defer safeWGDone()
+
+	for i := 0; i < 3; i++ {
+		fmt.Println(str)
+		time.Sleep(time.Millisecond * 100)
+		if i == 2 {
+			makeTrouble()
+		}
+	}
+
+}
+
+func makeTrouble() {
+	panic("Trouble Starts!")
+}
+
+func safeWGDone() {
+
+	defer wGroup.Done() // defer: begin to run when other surrounding statements complete or panic out
+	// Defer behaves like a stack. Statements in multiple "defer"s follow LIFO order of exec
+
+	recoverer := recover()
+
+	if recoverer != nil {
+		fmt.Println("Exception handled: ", recoverer)
+	}
+
+}
+
 func freeStyle() {
 	go procrast("beep") // async
 
@@ -47,6 +78,20 @@ func withRoutines() {
 
 }
 
-func main() {
-	withRoutines()
+func withRoutinesSafe() {
+
+	wGroup.Add(1)
+	go procrastN("Von") // async
+
+	fmt.Println("Beep")
+
+	wGroup.Add(1)
+	go procrastN("Dann") // async
+
+	wGroup.Wait()
+
+}
+
+func mainpr() {
+	withRoutinesSafe()
 }
